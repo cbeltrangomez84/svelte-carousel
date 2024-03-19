@@ -4,6 +4,11 @@
   "description": "Svelte carousel",
   "main": "src/main.js",
   "module": "src/main.js",
+  "exports": {
+    ".": {
+      "svelte": "./src/main.js"
+    }
+  },
   "svelte": "src/main.js",
   "author": "vadimkorr",
   "type": "module",
