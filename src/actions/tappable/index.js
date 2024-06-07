@@ -1,1 +1,1 @@
-export * from './tappable'
+export * from "./tappable.js"

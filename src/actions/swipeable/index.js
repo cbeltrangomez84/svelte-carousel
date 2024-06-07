@@ -1,1 +1,1 @@
-export * from './swipeable'
+export * from "./swipeable.js"

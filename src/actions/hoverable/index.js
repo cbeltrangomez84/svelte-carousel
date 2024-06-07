@@ -1,1 +1,1 @@
-export * from './hoverable'
+export * from "./hoverable.js"
