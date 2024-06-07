@@ -1,15 +1,7 @@
-import { createDispatcher } from '../../utils/event'
-import { getDistance } from '../../utils/math'
-import {
-  addFocusinEventListener,
-  removeFocusinEventListener,
-  addFocusoutEventListener,
-  removeFocusoutEventListener,
-} from './event'
-import {
-  TAP_DURATION_MS,
-  TAP_MOVEMENT_PX,
-} from '../../units'
+import { createDispatcher } from "../../utils/event.js"
+import { getDistance } from "../../utils/math.js"
+import { addFocusinEventListener, removeFocusinEventListener, addFocusoutEventListener, removeFocusoutEventListener } from "./event.js"
+import { TAP_DURATION_MS, TAP_MOVEMENT_PX } from "../../units.js"
 
 /**
  * tappable events are for touchable devices only
@@ -20,16 +12,10 @@ export function tappable(node) {
   let tapStartedAt = 0
   let tapStartPos = { x: 0, y: 0 }
 
-  function getIsValidTap({
-    tapEndedAt,
-    tapEndedPos
-  }) {
+  function getIsValidTap({ tapEndedAt, tapEndedPos }) {
     const tapTime = tapEndedAt - tapStartedAt
     const tapDist = getDistance(tapStartPos, tapEndedPos)
-    return (
-      tapTime <= TAP_DURATION_MS &&
-      tapDist <= TAP_MOVEMENT_PX
-    )
+    return tapTime <= TAP_DURATION_MS && tapDist <= TAP_MOVEMENT_PX
   }
 
   function handleTapstart(event) {
@@ -45,16 +31,18 @@ export function tappable(node) {
     removeFocusoutEventListener(node, handleTapend)
 
     const touch = event.changedTouches[0]
-    if (getIsValidTap({
-      tapEndedAt: Date.now(),
-      tapEndedPos: { x: touch.clientX, y: touch.clientY }
-    })) {
-      dispatch('tapped')
+    if (
+      getIsValidTap({
+        tapEndedAt: Date.now(),
+        tapEndedPos: { x: touch.clientX, y: touch.clientY },
+      })
+    ) {
+      dispatch("tapped")
     }
   }
 
   addFocusinEventListener(node, handleTapstart)
-  
+
   return {
     destroy() {
       removeFocusinEventListener(node, handleTapstart)

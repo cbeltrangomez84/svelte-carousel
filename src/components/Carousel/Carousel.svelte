@@ -3,20 +3,20 @@
   import Dots from '../Dots/Dots.svelte'
   import Arrow from '../Arrow/Arrow.svelte'
   import Progress from '../Progress/Progress.svelte'
-  import { NEXT, PREV } from '../../direction'
-  import { swipeable } from '../../actions/swipeable'
-  import { hoverable } from '../../actions/hoverable'
-  import { tappable } from '../../actions/tappable'
+  import { NEXT, PREV } from '../../direction.js'
+  import { swipeable } from '../../actions/swipeable.js'
+  import { hoverable } from '../../actions/hoverable.js'
+  import { tappable } from '../../actions/tappable.js'
   import {
     applyParticleSizes,
     createResizeObserver,
-  } from '../../utils/page'
+  } from '../../utils/page.js'
   import {
     getClones,
     applyClones,
-  } from '../../utils/clones'
-  import { get, switcher } from '../../utils/object'
-  import createCarousel from './createCarousel'
+  } from '../../utils/clones.js'
+  import { get, switcher } from '../../utils/object.js'
+  import createCarousel from './createCarousel.js'
 
   // used for lazy loading images, preloaded only current, adjacent and cloanable images
   let loaded = []

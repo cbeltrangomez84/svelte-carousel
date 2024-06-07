@@ -1,10 +1,5 @@
-import { createDispatcher } from '../../utils/event'
-import {
-  addHoverInEventListener,
-  removeHoverInEventListener,
-  addHoverOutEventListener,
-  removeHoverOutEventListener
-} from './event'
+import { createDispatcher } from "../../utils/event.js"
+import { addHoverInEventListener, removeHoverInEventListener, addHoverOutEventListener, removeHoverOutEventListener } from "./event.js"
 
 /**
  * hoverable events are for mouse events only
@@ -14,16 +9,16 @@ export function hoverable(node) {
 
   function handleHoverIn() {
     addHoverOutEventListener(node, handleHoverOut)
-    dispatch('hovered', { value: true })
+    dispatch("hovered", { value: true })
   }
 
   function handleHoverOut() {
-    dispatch('hovered', { value: false })
+    dispatch("hovered", { value: false })
     removeHoverOutEventListener(node, handleHoverOut)
   }
 
   addHoverInEventListener(node, handleHoverIn)
-  
+
   return {
     destroy() {
       removeHoverInEventListener(node, handleHoverIn)
