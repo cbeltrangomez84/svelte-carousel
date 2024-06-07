@@ -4,9 +4,9 @@
   import Arrow from '../Arrow/Arrow.svelte'
   import Progress from '../Progress/Progress.svelte'
   import { NEXT, PREV } from '../../direction.js'
-  import { swipeable } from '../../actions/swipeable.js'
-  import { hoverable } from '../../actions/hoverable.js'
-  import { tappable } from '../../actions/tappable.js'
+  import { swipeable } from '../../actions/swipeable/swipeable.js'
+  import { hoverable } from '../../actions/hoverable/hoverable.js'
+  import { tappable } from '../../actions/tappable/tappable.js'
   import {
     applyParticleSizes,
     createResizeObserver,
