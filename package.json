@@ -4,23 +4,6 @@
   "description": "Svelte carousel",
   "main": "src/main.js",
   "module": "src/main.js",
-  "exports": {
-    ".": {
-      "svelte": "./src/main.js",
-      "require": "./dist/index.js",
-      "default": "./dist/index.js"
-    },
-    "./actions/hoverable": "./src/actions/hoverable.js",
-    "./actions/swipeable": "./src/actions/swipeable.js",
-    "./actions/tappable": "./src/actions/tappable.js",
-    "./direction": "./src/direction.js",
-    "./utils/page": "./src/utils/page.js",
-    "./utils/clones": "./src/utils/clones.js",
-    "./utils/lazy": "./src/utils/lazy.js",
-    "./utils/math": "./src/utils/math.js",
-    "./utils/object": "./src/utils/object.js",
-    "./utils/ProgressManager": "./src/utils/ProgressManager.js"
-  },
   "svelte": "src/main.js",
   "author": "vadimkorr",
   "type": "module",
